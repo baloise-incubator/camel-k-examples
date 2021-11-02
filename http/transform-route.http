@@ -1,0 +1,20 @@
+POST https://camel-route-camel-k-resources.apps.okd.baloise.dev/data
+Content-Type: application/json
+
+{
+  "id": 10,
+  "firstname": "Kevin",
+  "lastname": "Snow",
+  "shipDate": "2017-07-21T17:32:28Z",
+  "status": "approved",
+  "complete": true
+}
+
+###
+# {
+#  "id": 10,
+#  "fullname": "Kevin Snow",
+#  "shipTimestamp": 1500658348,
+#  "complete": "Yes/No",
+#  "newField": "fd861409-33cb-46db-ba4a-514c557d5141"
+# }
