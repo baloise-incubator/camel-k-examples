@@ -1,0 +1,23 @@
+---
+openapi: 3.0.2
+info:
+  title: Camel K - OpenAPI example
+  version: 1.0.0
+  description: An OpenAPI greeting example with Camel K on OpenShift.
+paths:
+  /v1/{name}:
+    get:
+      responses:
+        "200":
+          content:
+            text/html: {}
+          description: Returns the greeting
+      operationId: greeting-id
+      summary: Greet a name
+    parameters:
+      - name: name
+        description: Name of the person
+        schema:
+          type: string
+        in: path
+        required: true

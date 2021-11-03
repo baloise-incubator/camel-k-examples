@@ -1,6 +1,17 @@
 # camel-k-examples
 dev environment for camel-k examples
 
+# route exmaple
+
+Example for calling a camel-k micro service from within another camel-k micro service. Used two easy open-api 
+micro services passing a paramter "name" which is concatenated by the second service call. 
+
+Findings: the rest parameter "name" is put into the message header by camel. In order to avoid a multiple definition 
+by the inner service call, it need to be removed.
+Using setProperty() for variables only works inside the Exchange object but there is no way to access these with
+getProperty() inside the same dsl route, e.g. in the toD :(. 
+
+
 ## Run this example by using 
 `mvn camel:run`
 
