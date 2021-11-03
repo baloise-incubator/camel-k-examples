@@ -1,6 +1,21 @@
 # camel-k-examples
 dev environment for camel-k examples
 
+## Documentation
+- https://camel.apache.org
+
+## Remote Debugging
+Remote debugging in Camel-k is possible but with some constraints. First of all, starting a remote
+debugging session is straight forward, e.g. debugging the route sender example is done by
+`kamel debug route-sender`. This command starts a remote debugging session default on 'port 5005'.
+This port can be attached from within this project, e.g. a 'Remote JVM Debug' run configuration in IntelliJ.
+The Camel DSL debugging is kind of senseless, since it only configures the behaviour. More interesting is
+debugging a specific call to this route. For this, create a process step and put a breakpoint inside this
+process method.
+
+### Constraint
+HotSwap is not supported with Camel-k
+
 ## Examples
 ### Transform
 You can use OpenAPI v3. Over the `operation-id` you can connect operations form the OpenAPI YAML to the Camel DSL.  
@@ -22,7 +37,8 @@ micro services passing a paramter "name" which is concatenated by the second ser
 - `./src/main/java/ch/baloise/example/route/OpenApiSender.java`
 - `./src/main/java/ch/baloise/example/route/OpenApiReceiver.java`
 
-Findings: the rest parameter "name" is put into the message header by camel. In order to avoid a multiple definition
+#### Findings
+The rest parameter "name" is put into the message header by camel. In order to avoid a multiple definition
 by the inner service call, it need to be removed.
 Using setProperty() for variables only works inside the Exchange object but there is no way to access these with
 getProperty() inside the same dsl route, e.g. in the toD :(.
@@ -31,6 +47,3 @@ getProperty() inside the same dsl route, e.g. in the toD :(.
 See `./src/test/java/ch/baloise/example/helloworld/HelloRoute.java`
 
 Uses CamelTestSupport
-
-## Documentation
-- https://camel.apache.org
