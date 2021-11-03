@@ -1,6 +1,6 @@
 // camel-k: language=java name=RouteSender trait=route.tls-termination=edge open-api=openapi.yaml
 
-package ch.baloise.examples.route;
+package ch.baloise.example.route;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
