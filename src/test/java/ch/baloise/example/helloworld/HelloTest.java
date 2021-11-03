@@ -1,4 +1,4 @@
-package ch.baloise;
+package ch.baloise.example.helloworld;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.test.junit5.CamelTestSupport;
