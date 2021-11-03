@@ -1,4 +1,4 @@
-package ch.baloise.contact;
+package ch.baloise.example.contact;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

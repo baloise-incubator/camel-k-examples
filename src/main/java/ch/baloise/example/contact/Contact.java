@@ -1,4 +1,4 @@
-package ch.baloise.contact;
+package ch.baloise.example.contact;
 
 /**
  * Represents a Guidewire Contact

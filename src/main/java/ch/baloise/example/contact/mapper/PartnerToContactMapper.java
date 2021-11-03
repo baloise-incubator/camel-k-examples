@@ -1,7 +1,7 @@
-package ch.baloise.contact.mapper;
+package ch.baloise.example.contact.mapper;
 
-import ch.baloise.contact.Contact;
-import ch.baloise.contact.Partner;
+import ch.baloise.example.contact.Contact;
+import ch.baloise.example.contact.Partner;
 
 public class PartnerToContactMapper {
 

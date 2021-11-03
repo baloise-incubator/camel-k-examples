@@ -1,4 +1,4 @@
-package ch.baloise.contact.mapper;
+package ch.baloise.example.contact.mapper;
 
 import org.apache.camel.main.Main;
 

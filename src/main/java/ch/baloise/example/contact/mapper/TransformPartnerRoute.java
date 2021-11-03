@@ -1,8 +1,8 @@
-package ch.baloise.contact.mapper;
+package ch.baloise.example.contact.mapper;
 
-import ch.baloise.contact.Contact;
-import ch.baloise.contact.ContactLogger;
-import ch.baloise.contact.Partner;
+import ch.baloise.example.contact.Contact;
+import ch.baloise.example.contact.ContactLogger;
+import ch.baloise.example.contact.Partner;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.jackson.JacksonDataFormat;
