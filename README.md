@@ -3,6 +3,7 @@ dev environment for camel-k examples
 
 ## Documentation
 - https://camel.apache.org
+- https://jitpack.io
 
 ## Remote Debugging
 Remote debugging in Camel-k is possible but with some constraints. First of all, starting a remote
@@ -47,3 +48,14 @@ getProperty() inside the same dsl route, e.g. in the toD :(.
 See `./src/test/java/ch/baloise/example/helloworld/HelloRoute.java`
 
 Uses CamelTestSupport
+
+### Jitpack
+Camel-k can use source code directly from Github using Jitpack.
+A dependency can be referenced in the `kamel run` call with the option -d.
+
+Run the jitpack example:
+`kamel run -d github:baloise-incubator/camel-k-examples/df39837f59f2bfec86b272537c9e7bf3f95ccca3 ./src/main/java/ch/baloise/example/jitpack/JitPackRoute.java`
+
+In the former example the commit hash was provided to identify the right version. 
+It is also possible to specify the branch name.
+`kamel run -d github:baloise-incubator/camel-k-examples/main-SNAPSHOT ./src/main/java/ch/baloise/example/jitpack/JitPackRoute.java`
