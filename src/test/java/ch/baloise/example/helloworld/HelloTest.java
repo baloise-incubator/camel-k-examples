@@ -12,7 +12,6 @@ public class HelloTest extends CamelTestSupport {
         return new HelloRoute();
     }
 
-    @Test
     public void testHello() throws Exception {
         Object reply = template.requestBodyAndHeader("direct:hello", "", "name", "World");
         Assertions.assertEquals("Hello World", reply);
