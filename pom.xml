@@ -113,6 +113,26 @@
         </configuration>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>libs/</classpathPrefix>
+            </manifest>
+          </archive>
+          <includes>
+            **/example/openapi/*
+          </includes>
+          <excludes>
+            **/*Route.class
+          </excludes>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 
