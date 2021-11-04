@@ -1,4 +1,4 @@
-POST https://camel-route-camel-k-resources.apps.okd.baloise.dev/data
+POST https://transform-route-camel-k-resources.apps.okd.baloise.dev/data
 Content-Type: application/json
 
 {

@@ -25,6 +25,12 @@ The `tls-termination=edge` is for OpenShift to enable HTTPS.
 In general a lot of the OpenAPI spec is not respected like payload validations or return types/codes.  
 It makes more sense to use https://camel.apache.org/manual/rest-dsl.html to define the API by DSL and generate the OpenAPI.
 
+### OpenAPI
+You can find the documentation under https://camel.apache.org/manual/rest-dsl.html for a code first example.  
+The rest endpoints will be correctly deployed and exposed, see `example/openapi`. Sadly there is no access to
+the OpenAPI files or UI, as inner classes are limiting these feature. Additionally, if you like to start the example
+locally, you have to install a platform server (e.g. undertow, netty). 
+
 ### Transform partner json to contact json
 To execute this example run the Camal Main app `./src/main/java/ch/baloise/example/contact/mapper/ContactMapperMainApp.java`
 This route reads json files from the folder `./src/data/partner` and maps the incoming json eventually to a json representing a contact object.

@@ -1,4 +1,4 @@
-// camel-k: name=camel-route
+// camel-k: name=transform-route
 // camel-k: trait=route.tls-termination=edge
 // camel-k: open-api=./../../../resources/openapi-camel-route.yaml
 // camel-k: dependency=camel-jackson
