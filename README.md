@@ -1,5 +1,5 @@
 # camel-k-examples
-dev environment for camel-k examples
+Dev environment for camel-k + examples.
 
 ## Documentation
 - https://camel.apache.org
@@ -32,17 +32,17 @@ The `tls-termination=edge` is for OpenShift to enable HTTPS.
 In general a lot of the OpenAPI spec is not respected like payload validations or return types/codes.  
 It makes more sense to use https://camel.apache.org/manual/rest-dsl.html to define the API by DSL and generate the OpenAPI.
 
+#### Transform partner json to contact json
+To execute this example run the Camel Main app `./src/main/java/ch/baloise/example/contact/mapper/ContactMapperMainApp.java`
+This route reads json files from the folder `./src/data/partner` and maps the incoming json eventually to a json representing a contact object.
+Uses Camel marshalling and unmarshalling.
+
 ### OpenAPI
 You can find the documentation under https://camel.apache.org/manual/rest-dsl.html for a code first example.  
 The rest endpoints will be correctly deployed and exposed, see `example/openapi`. You can access the OpenAPI file with over
 `<url>/api-doc/openapi.yaml`. Sadly there isn't a way to validate the json.
 
-### Transform partner json to contact json
-To execute this example run the Camel Main app `./src/main/java/ch/baloise/example/contact/mapper/ContactMapperMainApp.java`
-This route reads json files from the folder `./src/data/partner` and maps the incoming json eventually to a json representing a contact object.
-Uses Camel marshalling and unmarshalling.
-
-### Route example
+### Connected services
 Example for calling a camel-k microservice from within another camel-k microservice. Used two easy open-api
 microservices passing a parameter "name" which is concatenated by the second service call.
 - `./src/main/java/ch/baloise/example/route/OpenApiSender.java`
