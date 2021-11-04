@@ -17,6 +17,12 @@ process method.
 ### Constraint
 HotSwap is not supported with Camel-k
 
+## Development
+We recommend using the setup in `example/openapi`. It will use the jar build in `pom.xml` and adds this jar over the
+JVM trait and resource to the route.  
+We evaluated jitpack and MVN as alternative but decided to recommend this way as it's easy to use and integrate better
+with CI/CD and Camel K.
+
 ## Examples
 ### Transform
 You can use OpenAPI v3. Over the `operation-id` you can connect operations form the OpenAPI YAML to the Camel DSL.  
@@ -28,19 +34,17 @@ It makes more sense to use https://camel.apache.org/manual/rest-dsl.html to defi
 
 ### OpenAPI
 You can find the documentation under https://camel.apache.org/manual/rest-dsl.html for a code first example.  
-The rest endpoints will be correctly deployed and exposed, see `example/openapi`. Sadly there is no access to
-the OpenAPI files or UI, as inner classes are limiting these feature. Additionally, if you like to start the example
-locally, you have to install a platform server (e.g. undertow, netty). 
+The rest endpoints will be correctly deployed and exposed, see `example/openapi`. You can access the OpenAPI file with over
+`<url>/api-doc/openapi.yaml`. Sadly there isn't a way to validate the json.
 
 ### Transform partner json to contact json
-To execute this example run the Camal Main app `./src/main/java/ch/baloise/example/contact/mapper/ContactMapperMainApp.java`
+To execute this example run the Camel Main app `./src/main/java/ch/baloise/example/contact/mapper/ContactMapperMainApp.java`
 This route reads json files from the folder `./src/data/partner` and maps the incoming json eventually to a json representing a contact object.
 Uses Camel marshalling and unmarshalling.
 
-### Route exmaple
-
-Example for calling a camel-k micro service from within another camel-k micro service. Used two easy open-api
-micro services passing a paramter "name" which is concatenated by the second service call.
+### Route example
+Example for calling a camel-k microservice from within another camel-k microservice. Used two easy open-api
+microservices passing a parameter "name" which is concatenated by the second service call.
 - `./src/main/java/ch/baloise/example/route/OpenApiSender.java`
 - `./src/main/java/ch/baloise/example/route/OpenApiReceiver.java`
 
@@ -65,3 +69,11 @@ Run the jitpack example:
 In the former example the commit hash was provided to identify the right version. 
 It is also possible to specify the branch name.
 `kamel run -d github:baloise-incubator/camel-k-examples/main-SNAPSHOT ./src/main/java/ch/baloise/example/jitpack/JitPackRoute.java`
+
+## Question for RH
+- Is the jar setup the way to go?
+- How are openapi rules validated? bean? clientRequestValidation
+- Can you explain me the flow from run to running on OS?
+-- Build, IntegrationKit, Integration
+- Knative support, what and why?
+- 
