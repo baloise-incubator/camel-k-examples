@@ -70,6 +70,9 @@ In the former example the commit hash was provided to identify the right version
 It is also possible to specify the branch name.
 `kamel run -d github:baloise-incubator/camel-k-examples/main-SNAPSHOT ./src/main/java/ch/baloise/example/jitpack/JitPackRoute.java`
 
+### Example project SpringBoot REST service vs Camel REST DSL service
+see `https://github.com/harry08/CamelSpringBoot`
+
 ## Question for RH
 - Is the jar setup the way to go?
 - How are openapi rules validated? bean? clientRequestValidation
