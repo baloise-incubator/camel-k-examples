@@ -1,0 +1,28 @@
+###
+# Get all contacts
+#
+GET https://demo-inline-camel-k-resources.apps.okd.baloise.dev/contacts
+Content-Type: application/json
+
+###
+# Get contacts 1
+#
+GET https://demo-inline-camel-k-resources.apps.okd.baloise.dev/contacts/2
+Content-Type: application/json
+
+###
+# Update user
+#
+# => if body not sent 400
+# => Validations e.g. NotBlank, NotNull
+#
+POST https://demo-inline-camel-k-resources.apps.okd.baloise.dev/contacts
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Gero",
+  "lastName": "Hoffmann",
+  "postalCode": "79271",
+  "city": "St Peter"
+}
