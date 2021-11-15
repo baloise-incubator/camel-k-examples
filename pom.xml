@@ -138,7 +138,8 @@
             </manifest>
           </archive>
           <includes>
-            **/example/openapi/*
+            **/example/openapi/**/*,
+            **/example/demojar/**/*
           </includes>
           <excludes>
             **/*Route.class
