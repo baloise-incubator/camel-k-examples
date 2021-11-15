@@ -139,7 +139,8 @@
           </archive>
           <includes>
             **/example/openapi/**/*,
-            **/example/demojar/**/*
+            **/example/demojar/**/*,
+            **/example/jitpack/**/*
           </includes>
           <excludes>
             **/*Route.class
